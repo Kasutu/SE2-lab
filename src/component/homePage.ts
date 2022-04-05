@@ -6,7 +6,7 @@ import ReviewActions from './reviewActions';
 import Listings from '../interface/listings';
 import Dashboard from './dashboard';
 
-export default abstract class Home implements Website {
+export default class HomePage implements Website {
 	protected user: User | undefined;
 	protected page: Dashboard | Checkout | Listings;
 	protected header: string;
