@@ -1,6 +1,6 @@
 export default interface Item {
-	id: number;
-	url: string;
+	id: string;
 	name: string;
+	url: string;
 	description: string;
 }

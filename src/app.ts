@@ -1,30 +1,23 @@
-interface CallbackOneParam<T1, T2 = void> {
-	(param1: T1): T2;
-}
+import HomePage from './component/homePage';
+import { VoucherList } from './db/voucherList';
+import LoginForm from './interface/loginForm';
 
-function sayHi(callback: CallbackOneParam<string>) {
-	callback('Hi!');
-}
+const loginData: LoginForm = { username: 'gem', password: 'mweheheh' };
 
-function greeter(message: string) {
-	console.log(`${message}, how are you doing?`);
-}
+const homeScreen = new HomePage(
+	'Localprice',
+	'lorem lorem lorem lorem',
+	'black',
+	VoucherList
+);
 
-sayHi(greeter);
-
-// class Foo {
-//   save(callback: (n: number) => any): void {
-//     callback(42);
-//   }
-// }
-// var foo = new Foo();
-
-// var strCallback = (result: string): void => {
-//   alert(result);
-// };
-// var numCallback = (result: number): void => {
-//   alert(result.toString());
-// };
-
-// foo.save(strCallback); // not OK
-// foo.save(numCallback); // OK
+homeScreen.setUser(loginData);
+console.log(homeScreen.getCartItems());
+console.log(homeScreen.getItemUrl('cjE3d7-KVW'));
+homeScreen.getVoucher(1);
+homeScreen.getVoucher(0);
+console.log(homeScreen.getUser()?.voucherCodes);
+homeScreen.addToCart('cjE3d7-KVW');
+console.log(homeScreen.getCartItems());
+homeScreen.checkout();
+console.log(homeScreen.getCurrentPage()?.getMeta().title);

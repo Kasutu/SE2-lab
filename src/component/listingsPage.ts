@@ -1,14 +1,12 @@
 import WebPage from '../abstract/webPage';
 
-export default class Dashboard extends WebPage {
+export default class Listings extends WebPage {
 	protected title: string;
 	protected paragraph: string;
-	currentUserId: string | undefined;
 
 	constructor() {
 		super();
-		this.currentUserId = undefined;
-		this.title = 'User Dashboard';
+		this.title = 'Listings page';
 		this.paragraph = 'lorem lorem';
 	}
 }
