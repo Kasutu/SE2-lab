@@ -2,25 +2,11 @@ import CustomerReview from '../abstract/customerReview';
 import Comment from '../interface/comment';
 
 export default class ReviewActions extends CustomerReview {
-	emoji: string[];
+	private emoji: string[];
 
 	constructor(emojiList?: string[]) {
 		super();
 		this.emoji = emojiList ?? ['❤', '👍', '⭐'];
-	}
-
-	public heartBtn(): string {
-		return this.emoji[0];
-	}
-
-	public rating(score: number): string {
-		let rating = '';
-
-		for (let i = 0; i < score; i++) {
-			rating += this.emoji[2];
-		}
-
-		return rating;
 	}
 
 	public comment(input: Comment): Comment {
@@ -32,7 +18,21 @@ export default class ReviewActions extends CustomerReview {
 		return temp;
 	}
 
+	public heartBtn(): string {
+		return this.emoji[0];
+	}
+
 	public likeBtn(): string {
 		return this.emoji[1];
+	}
+
+	public rating(score: number): string {
+		let rating = '';
+
+		for (let i = 0; i < score; i++) {
+			rating += this.emoji[2];
+		}
+
+		return rating;
 	}
 }

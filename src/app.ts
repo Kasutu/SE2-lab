@@ -1,14 +1,15 @@
 import HomePage from './component/homePage';
-import { VoucherList } from './db/voucherList';
+import VoucherList from './db/voucherList';
 import LoginForm from './interface/loginForm';
 
+const vouchers = new VoucherList();
 const loginData: LoginForm = { username: 'gem', password: 'mweheheh' };
 
 const homeScreen = new HomePage(
 	'Localprice',
 	'lorem lorem lorem lorem',
 	'black',
-	VoucherList
+	vouchers.fetch()
 );
 
 homeScreen.setUser(loginData);

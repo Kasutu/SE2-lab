@@ -4,15 +4,14 @@ import ItemList from './itemsList';
 
 // returns all available users
 export default class UserList {
-	protected data: User[];
-	protected nameList: string[];
-	protected idList: string[];
-	protected portraitList: string[];
-	protected itemList: ItemList;
 	protected cartItemList: Item[];
-	protected emailList: string[];
 	protected contactList: string[];
-
+	protected data: User[];
+	protected emailList: string[];
+	protected idList: string[];
+	protected itemList: ItemList;
+	protected nameList: string[];
+	protected portraitList: string[];
 	constructor() {
 		this.data = [];
 		this.nameList = [
@@ -51,6 +50,10 @@ export default class UserList {
 		];
 
 		this.makeList();
+	}
+
+	public getUsers(): User[] {
+		return this.data;
 	}
 
 	public makeList(): User[] | void {
@@ -96,9 +99,5 @@ export default class UserList {
 		}
 
 		this.data = list;
-	}
-
-	public getUsers(): User[] {
-		return this.data;
 	}
 }

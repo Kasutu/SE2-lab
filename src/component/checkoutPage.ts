@@ -1,9 +1,8 @@
 import WebPage from '../abstract/webPage';
 
 export default class Checkout extends WebPage {
-	protected title: string;
 	protected paragraph: string;
-
+	protected title: string;
 	constructor() {
 		super();
 		this.title = 'Checkout page';

@@ -1,10 +1,9 @@
 import WebPage from '../abstract/webPage';
 
 export default class Dashboard extends WebPage {
-	protected title: string;
+	private currentUserId: string | undefined;
 	protected paragraph: string;
-	currentUserId: string | undefined;
-
+	protected title: string;
 	constructor() {
 		super();
 		this.currentUserId = undefined;

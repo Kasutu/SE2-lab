@@ -3,11 +3,10 @@ import Item from '../interface/item';
 // returns a list of available items
 export default class ItemList {
 	protected data: Item[];
-	protected nameList: string[];
-	protected idList: string[];
-	protected urlList: string[];
 	protected descList: string[];
-
+	protected idList: string[];
+	protected nameList: string[];
+	protected urlList: string[];
 	constructor() {
 		this.data = [];
 		this.nameList = [
@@ -36,6 +35,10 @@ export default class ItemList {
 		this.makeList();
 	}
 
+	public getItems(): Item[] {
+		return this.data;
+	}
+
 	public makeList(): Item[] | void {
 		let list: Item[] = [];
 
@@ -55,9 +58,5 @@ export default class ItemList {
 		}
 
 		this.data = list;
-	}
-
-	public getItems(): Item[] {
-		return this.data;
 	}
 }
